@@ -9,7 +9,7 @@ Setup (from the gradio repo root):
     source .venv/bin/activate
     pip install pydantic-ai
     export OPENAI_API_KEY=sk-...
-    python cookbooks/pydantic_ai_chat.py
+    python demo/external-agents/pydantic_ai_chat.py
 """
 
 import random

@@ -9,7 +9,7 @@ Setup (from the gradio repo root):
     source .venv/bin/activate
     pip install -e /Users/kaustubh/Desktop/Agno/agno/libs/agno
     export OPENAI_API_KEY=sk-...
-    python cookbooks/agno_agent_chat.py
+    python demo/external-agents/agno_agent_chat.py
 """
 
 import random

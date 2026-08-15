@@ -9,7 +9,7 @@ Setup (from the gradio repo root):
     source .venv/bin/activate
     pip install langchain langgraph langchain-openai
     export OPENAI_API_KEY=sk-...
-    python cookbooks/langchain_agent_chat.py
+    python demo/external-agents/langchain_agent_chat.py
 """
 
 import random

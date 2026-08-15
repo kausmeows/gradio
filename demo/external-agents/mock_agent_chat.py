@@ -8,7 +8,7 @@ agno (RunContentEvent, ToolCallStartedEvent, ...) so you can see the
 full UI mapping — tool panels with pending spinners, thinking panels,
 and streamed text — without an API key.
 
-Run:  source .venv/bin/activate && python cookbooks/mock_agent_chat.py
+Run:  source .venv/bin/activate && python demo/external-agents/mock_agent_chat.py
 """
 
 import time
