@@ -17,6 +17,7 @@ from anyio.to_thread import run_sync
 from gradio_client.documentation import document
 
 from gradio import utils
+from gradio.agents import agent_to_chat_fn, resolve_adapter
 from gradio.blocks import Blocks
 from gradio.components import (
     JSON,
@@ -157,6 +158,8 @@ class ChatInterface(Blocks):
         self.concurrency_limit = concurrency_limit
         if isinstance(fn, ChatInterface):
             self.fn = fn.fn
+        elif (agent_adapter := resolve_adapter(fn)) is not None:
+            self.fn = agent_to_chat_fn(fn, agent_adapter)
         else:
             self.fn = fn
         self.is_async = inspect.iscoroutinefunction(
@@ -777,7 +780,7 @@ class ChatInterface(Blocks):
             )
 
             self.chat_history_dataset.click(
-                lambda: [],
+                list,
                 None,
                 [self.chatbot],
                 api_visibility="undocumented",
